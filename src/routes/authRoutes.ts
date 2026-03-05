@@ -3,7 +3,8 @@ import { registerUser, loginUser } from "../controllers/authController";
 
 const router = express.Router();
 
-router.post("/register", registerUser);
-router.post("/login", loginUser);
+//Routes för autentisering
+router.post("/register", registerUser); //Lägg till användare
+router.post("/login", loginUser);       //Logga in användare
 
 export default router;

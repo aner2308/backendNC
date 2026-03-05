@@ -3,7 +3,7 @@ import { protect } from "../middleware/authMiddleware";
 
 const router = express.Router();
 
-//Testroute
+//Testroute för en användares privata sida
 router.get("/profile", protect, (req, res) => {
   res.json({
     message: "Access granted",
