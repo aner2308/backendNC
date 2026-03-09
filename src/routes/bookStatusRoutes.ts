@@ -12,7 +12,7 @@ const router = express.Router();
 
 //Routes för bokstatus
 router.get("/stats", protect, getReadingStats);   // Hämta statistik om ens läsning
-router.get("/", protect, getUserBooks);           // Hämta alla
+router.get("/user", protect, getUserBooks);       // Hämta alla
 router.post("/", protect, upsertBookStatus);      // Lägg till / uppdatera
 router.delete("/:id", protect, deleteBookStatus); // Ta bort
 
