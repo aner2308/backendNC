@@ -26,6 +26,12 @@ export const upsertBookStatus = async (req: AuthRequest, res: Response) => {
             bookStatus.format = format ?? bookStatus.format;
 
             await bookStatus.save();
+
+            return res.json({
+                message: "Bok uppdaterad i biblioteket",
+                updated: true,
+                bookStatus,
+            });
         } else {
             // Skapa ny
             bookStatus = await BookStatus.create({
@@ -39,7 +45,11 @@ export const upsertBookStatus = async (req: AuthRequest, res: Response) => {
             });
         }
 
-        res.json(bookStatus);
+        res.status(201).json({
+            message: "Bok tillagd i biblioteket",
+            updated: false,
+            bookStatus,
+        });
 
         //Felmeddelande
     } catch (error) {
