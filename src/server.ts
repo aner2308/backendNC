@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: "https://nextchapterproject.netlify.app",
+  origin: "https://localhost:5173",
   credentials: true,
 }));
 
